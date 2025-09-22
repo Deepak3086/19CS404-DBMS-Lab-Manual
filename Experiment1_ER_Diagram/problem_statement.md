@@ -54,6 +54,88 @@ Member    |     Member_ID (PK), Name, Membership_Type, Start_Date               
 
 
 
+# Scenario B: City Library Event & Book Lending System
+
+**Business Context:**  
+The Central Library wants to manage book lending and cultural events.
+
+**Requirements:**  
+- Members borrow books, with loan and return dates tracked.  
+- Each book has title, author, and category.  
+- Library organizes events; members can register.  
+- Each event has one or more speakers/authors.  
+- Rooms are booked for events and study.  
+- Overdue fines apply for late returns.
+
+### ER Diagram:
+*Paste or attach your diagram here*  
+![ER Diagram](er_diagram_library.png)
+
+### Entities and Attributes
+
+| Entity | Attributes (PK, FK) | Notes |
+|--------|--------------------|-------|
+|        |                    |       |
+|        |                    |       |
+|        |                    |       |
+|        |                    |       |
+|        |                    |       |
+
+### Relationships and Constraints
+
+| Relationship | Cardinality | Participation | Notes |
+|--------------|------------|---------------|-------|
+|              |            |               |       |
+|              |            |               |       |
+|              |            |               |       |
+
+### Assumptions
+- 
+- 
+- 
+
+---
+
+# Scenario C: Restaurant Table Reservation & Ordering
+
+**Business Context:**  
+A popular restaurant wants to manage reservations, orders, and billing.
+
+**Requirements:**  
+- Customers can reserve tables or walk in.  
+- Each reservation includes date, time, and number of guests.  
+- Customers place food orders linked to reservations.  
+- Each order contains multiple dishes; dishes belong to categories (starter, main, dessert).  
+- Bills generated per reservation, including food and service charges.  
+- Waiters assigned to serve reservations.
+
+### ER Diagram:
+*Paste or attach your diagram here*  
+![ER Diagram](er_diagram_restaurant.png)
+
+### Entities and Attributes
+
+| Entity | Attributes (PK, FK) | Notes |
+|--------|--------------------|-------|
+|        |                    |       |
+|        |                    |       |
+|        |                    |       |
+|        |                    |       |
+|        |                    |       |
+
+### Relationships and Constraints
+
+| Relationship | Cardinality | Participation | Notes |
+|--------------|------------|---------------|-------|
+|              |            |               |       |
+|              |            |               |       |
+|              |            |               |       |
+
+### Assumptions
+- 
+- 
+- 
+
 ---
 
 ## Instructions for Students
