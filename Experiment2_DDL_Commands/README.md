@@ -102,164 +102,223 @@ CREATE TABLE Table_Name (
   col_name3 data_type DEFAULT 'default_value'
 );
 ```
-
 **Question 1**
 --
--- Write a SQL statement to Update the grade of all customers in Chennai city as  5. 
+-- Paste Question 1 here
+Write a SQL query to Add a new column Mobilenumber as number in the Student_details table.
 
 ```sql
--- UPDATE customer
-SET grade=5
-WHERE city = 'Chennai';
+-- Paste your SQL code below for Question 1
+
+ ALTER TABLE Student_details
+ADD Mobilenumber number;
+
 ```
 
 **Output:**
-<img width="1172" height="387" alt="image" src="https://github.com/user-attachments/assets/b9dfce87-0b33-4a89-a4cc-6d5d20dd57fc" />
+
+<img width="1250" height="197" alt="image" src="https://github.com/user-attachments/assets/edf56af3-4386-4dac-a002-601c75af251b" />
+
 
 **Question 2**
 ---
--- Write a SQL statement to Increase the selling price by 10% for all products in the 'Bakery' category in the products table.
+--
+
+
+Create a table named Products with the following constraints:
+
+ProductID should be the primary key.
+ProductName should be NOT NULL.
+Price is of real datatype and should be greater than 0.
+Stock is of integer datatype and should be greater than or equal to 0.
 
 ```sql
---UPDATE products
-SET sell_price = sell_price*1.10
-WHERE category = 'Bakery';
+-- Paste your SQL code below for Question 2
+CREATE TABLE Products(
+   ProductID INT PRIMARY KEY,
+   ProductName VARCHAR(100) NOT NULL,
+   Price REAL CHECK(Price>0),
+   Stock INT CHECK(Stock>=0)
+);
 ```
 
 **Output:**
 
-<img width="1282" height="290" alt="image" src="https://github.com/user-attachments/assets/fe98573c-50d8-4925-960a-ff5bf4bd8fd7" />
+<img width="1025" height="128" alt="image" src="https://github.com/user-attachments/assets/924acd7e-1156-467e-ad51-2abe32093c2b" />
 
 
 **Question 3**
 ---
---Update the 'Selling_Price' to add 10% extra margin for all products supplied by the supplier with id 6.
+-- 
+Write a SQL query to add a column named Date_of_birth as Date in the Student_details table.
 
 ```sql
-UPDATE products
-SET sell_price = ROUND(sell_price*1.10)
-WHERE supplier_id=6;
+-- Paste your SQL code below for Question 3
+ALTER TABLE Student_details
+ADD Date_of_birth Date;
 ```
 
 **Output:**
 
-<img width="1298" height="310" alt="image" src="https://github.com/user-attachments/assets/da8d0b5b-5b84-4729-9346-1b1d828d85bb" />
+<img width="1253" height="251" alt="image" src="https://github.com/user-attachments/assets/eaa5180f-355e-4992-acaa-a44572af587d" />
 
 
 **Question 4**
 ---
--- Write a SQL statement to Double the salary for employees in department 20 who have a job_id ending with 'MAN'
+-- 
+Insert the following products into the Products table:
 
-
+Name        Category     Price       Stock
+----------  -----------  ----------  ----------
+Smartphone  Electronics  800         150
+Headphones  Accessories  200         300
 
 ```sql
-UPDATE employees
-SET salary=salary*2
-WHERE department_id=20
-AND job_id LIKE '%MAN';
+-- Paste your SQL code below for Question 4
+INSERT INTO Products(Name,Category,Price,Stock)
+VALUES('Smartphone','Electronics',800,150);
+
+INSERT INTO Products(Name,Category,Price,Stock)
+VALUES('Headphones','Accessories',200,300);
 ```
 
 **Output:**
-<img width="1296" height="180" alt="image" src="https://github.com/user-attachments/assets/f9a69e1c-2ac0-4112-a1d9-36517b0986a5" />
+
+<img width="1127" height="240" alt="image" src="https://github.com/user-attachments/assets/9bc834eb-c0a8-4604-82e0-9cfe48684fab" />
 
 
 **Question 5**
 ---
--- Write a SQL query to Delete All Doctors with a NULL Specialization
+--
+Insert all students from Archived_students table into the Student_details table.
 
 ```sql
--- DELETE FROM doctors
-WHERE specialization IS NULL;
+-- Paste your SQL code below for Question 5
+INSERT INTO Student_details
+SELECT * FROM Archived_students;
 ```
 
 **Output:**
 
-<img width="838" height="418" alt="image" src="https://github.com/user-attachments/assets/fb19d6f4-611c-46be-8d5c-6bff6e1b6153" />
+<img width="1202" height="179" alt="image" src="https://github.com/user-attachments/assets/1c748d38-4fe7-4417-b785-b0c2d912fde1" />
+
 
 **Question 6**
 ---
--- Write a SQL query to determine the age group of value1 in the Calculations table as 'Child' if it is less than 13, 'Teen' if it is between 13 and 19, and 'Adult' if it is 20 or older.
-
-
+--
+Create a table named Orders with the following constraints:
+OrderID as INTEGER should be the primary key.
+OrderDate as DATE should be not NULL.
+CustomerID as INTEGER should be a foreign key referencing Customers(CustomerID).
 
 ```sql
--- SELECT 
-     id,
-     value1,
-     CASE
-         WHEN value1 < 13 THEN 'Child'
-         WHEN value1 BETWEEN 13 AND 19 THEN 'Teen'
-         ELSE 'Adult'
-     END AS age_group
-FROM Calculations;
+-- Paste your SQL code below for Question 6
+CREATE TABLE Orders(
+    OrderID INT PRIMARY KEY,
+    OrderDate Date NOT NULL,
+    CustomerID INT,
+    FOREIGN KEY(CustomerID) REFERENCES
+    Customers(CustomerID)
+);
 ```
 
 **Output:**
 
-<img width="509" height="193" alt="image" src="https://github.com/user-attachments/assets/32356797-e54c-4304-a22a-b0738c6c5084" />
+<img width="959" height="111" alt="image" src="https://github.com/user-attachments/assets/470d20a4-c875-40da-97d7-82f86ea403fe" />
 
 
 **Question 7**
 ---
--- Write a SQL query to delete a doctor from Doctors table whose Specialization is 'Pediatrics' and First name is 'Michael'.
+--
+Create a table named Tasks with the following columns:
+
+TaskID as INTEGER
+TaskName as TEXT
+DueDate as DATE
 
 ```sql
-DELETE FROM doctors
-WHERE specialization = 'Pediatrics'
-AND first_name = 'Michael';
+-- Paste your SQL code below for Question 7
+CREATE TABLE Tasks(
+     TaskID INTEGER,
+     TaskName TEXT,
+     DueDate DATE
+);
 ```
 
 **Output:**
 
-<img width="865" height="211" alt="image" src="https://github.com/user-attachments/assets/420aa06b-296d-499a-99cf-e19ae9d27646" />
+<img width="1263" height="221" alt="image" src="https://github.com/user-attachments/assets/5e3eefed-5885-4164-9642-d5a9c9d9ab8a" />
 
 
 **Question 8**
 ---
--- Write a SQL query to remove rows from the table 'customer' with the following condition -
-
-1. 'cust_city' should begin with the letter 'L',
+-- 
+Insert a record with EmployeeID 001, Name Sarah Parker, Position Manager, Department HR, and Salary 60000 into the Employee table.
 
 ```sql
---DELETE FROM customer
-WHERE cust_city LIKE 'L%';
+-- Paste your SQL code below for Question 8
+INSERT INTO Employee(EmployeeId,Name,Position,Department,Salary)
+VALUES(001,'Sarah Parker','Manager','HR',60000);
 ```
 
 **Output:**
 
-<img width="1285" height="514" alt="image" src="https://github.com/user-attachments/assets/25f0dfd2-4430-4a39-b968-a07e49bf961a" />
+<img width="1102" height="140" alt="image" src="https://github.com/user-attachments/assets/fbebb045-1284-4fb0-b2eb-88e74c3fb6dd" />
 
 
 **Question 9**
 ---
---  Write a query to fetch details of all employees excluding the employees with first names, “Sanjay” and “Sonia” from the EmployeeInfo table.
+--
 
-
+Create a table named ProjectAssignments with the following constraints:
+AssignmentID as INTEGER should be the primary key.
+EmployeeID as INTEGER should be a foreign key referencing Employees(EmployeeID).
+ProjectID as INTEGER should be a foreign key referencing Projects(ProjectID).
+AssignmentDate as DATE should be NOT NULL.
 ```sql
--- SELECT * FROM EmployeeInfo
-WHERE EmpFname NOT IN ('Sanjay','Sonia');
+-- Paste your SQL code below for Question 9
+CREATE TABLE ProjectAssignments(
+   AssignmentID INTEGER PRIMARY KEY,
+   EmployeeID INTEGER,
+   ProjectID INTEGER,
+   AssignmentDate DATE NOT NULL,
+   FOREIGN KEY (EmployeeID) REFERENCES
+   Employees(EmployeeID),
+   FOREIGN KEY (ProjectID) REFERENCES
+   Projects(ProjectID)
+);
 ```
 
 **Output:**
 
-<img width="1212" height="114" alt="image" src="https://github.com/user-attachments/assets/1c0e100c-1405-407a-84e1-ec6d0170b72b" />
+<img width="1095" height="116" alt="image" src="https://github.com/user-attachments/assets/bd7af639-34b7-4c8b-ac2c-0e5a4050fbc6" />
 
 
 **Question 10**
 ---
---Write a query to fetch all the records from the EmployeeInfo table ordered by EmpLname in descending order and Department in the ascending order.
+-- 
+create a table named jobs including columns job_id, job_title, min_salary and max_salary, and make sure that, the default value for job_title is blank and min_salary is 8000 and max_salary is NULL will be entered automatically at the time of insertion if no value assigned for the specified columns.
 
 ```sql
---SELECT * FROM EMPLOYEEInfo
-ORDER BY EmpFname DESC , Department ASC;
+-- Paste your SQL code below for Question 10
+CREATE TABLE jobs(
+job_id INT PRIMARY KEY,
+job_title VARCHAR(100) DEFAULT NULL,
+min_salary INT DEFAULT 8000,
+max_salary INT DEFAULT NULL
+);
 ```
 
 **Output:**
 
-<img width="1263" height="160" alt="image" src="https://github.com/user-attachments/assets/1fff51f3-197d-447d-a56c-72d71cdbd5b1" />
+<img width="1047" height="147" alt="image" src="https://github.com/user-attachments/assets/55d1453b-3358-41de-ab87-187e811ae9af" />
 
-<img width="1918" height="550" alt="image" src="https://github.com/user-attachments/assets/4dff6b36-74b7-4b85-9f2b-00a57cfbdb35" />
+
+** marks : **:
+
+<img width="1912" height="1072" alt="image" src="https://github.com/user-attachments/assets/0d57c7fd-0836-45a4-ab11-90cd776ff434" />
+
+
 
 
 ## RESULT
-Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
