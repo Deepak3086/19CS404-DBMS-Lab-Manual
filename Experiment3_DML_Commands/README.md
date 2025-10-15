@@ -50,7 +50,7 @@ SELECT column1, column2 FROM table_name WHERE condition;
 --Write a SQL statement to Update the grade of all customers in Chennai city as  5. 
 
 ```sql
---UPDATE customer
+UPDATE customer
 SET grade=5
 WHERE city = 'Chennai';
 ```
@@ -65,7 +65,8 @@ WHERE city = 'Chennai';
 --Write a SQL statement to Increase the selling price by 10% for all products in the 'Bakery' category in the products table.
 
 ```sql
--- UPDATE products
+
+UPDATE products
 SET sell_price = sell_price*1.10
 WHERE category = 'Bakery';
 ```
@@ -80,7 +81,7 @@ WHERE category = 'Bakery';
 -- Update the 'Selling_Price' to add 10% extra margin for all products supplied by the supplier with id 6.
 
 ```sql
--- UPDATE products
+UPDATE products
 SET sell_price = ROUND(sell_price*1.10)
 WHERE supplier_id=6;
 ```
@@ -95,7 +96,7 @@ WHERE supplier_id=6;
 --Write a SQL statement to Double the salary for employees in department 20 who have a job_id ending with 'MAN'
 
 ```sql
--- UPDATE employees
+UPDATE employees
 SET salary=salary*2
 WHERE department_id=20
 AND job_id LIKE '%MAN';
@@ -111,25 +112,28 @@ AND job_id LIKE '%MAN';
 --Write a SQL query to Delete All Doctors with a NULL Specialization
 
 ```sql
--- DELETE FROM doctors
+DELETE FROM doctors
 WHERE specialization IS NULL;
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="934" height="253" alt="image" src="https://github.com/user-attachments/assets/3c18d65c-0100-4c2e-b726-bfff52846e09" />
 
 **Question 6**
 ---
--- Paste Question 6 here
+--Write a SQL query to remove rows from the table 'customer' with the following condition -
 
+1. 'cust_city' should begin with the letter 'L',
 ```sql
--- Paste your SQL code below for Question 6
+DELETE FROM customer
+WHERE cust_city LIKE 'L%';
 ```
 
 **Output:**
 
-<img width="1005" height="268" alt="image" src="https://github.com/user-attachments/assets/133959fe-c4b7-4b41-9947-32fd58a83e9c" />
+<img width="1264" height="735" alt="image" src="https://github.com/user-attachments/assets/2b5f37d3-7e0f-4b7a-9e42-d82c241b29f8" />
+
 
 
 **Question 7**
@@ -137,7 +141,7 @@ WHERE specialization IS NULL;
 -- Write a SQL query to delete a doctor from Doctors table whose Specialization is 'Pediatrics' and First name is 'Michael'.
 
 ```sql
--- DELETE FROM doctors
+DELETE FROM doctors
 WHERE specialization = 'Pediatrics'
 AND first_name = 'Michael';
 ```
@@ -152,7 +156,7 @@ AND first_name = 'Michael';
 -- Write a query to fetch details of all employees excluding the employees with first names, “Sanjay” and “Sonia” from the EmployeeInfo table.
 
 ```sql
---SELECT * FROM EmployeeInfo
+SELECT * FROM EmployeeInfo
 WHERE EmpFname NOT IN ('Sanjay','Sonia');
 ```
 
@@ -167,7 +171,7 @@ WHERE EmpFname NOT IN ('Sanjay','Sonia');
 
 
 ```sql
--- SELECT * FROM EMPLOYEEInfo
+ SELECT * FROM EMPLOYEEInfo
 ORDER BY EmpFname DESC , Department ASC;
 ```
 
@@ -181,7 +185,7 @@ ORDER BY EmpFname DESC , Department ASC;
 --Write a SQL query to determine the age group of value1 in the Calculations table as 'Child' if it is less than 13, 'Teen' if it is between 13 and 19, and 'Adult' if it is 20 or older.
 
 ```sql
--- SELECT 
+SELECT 
      id,
      value1,
      CASE
