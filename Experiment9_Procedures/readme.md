@@ -123,6 +123,7 @@ Factorial of 5 is 120
 ---
 ## Output:
 
+<img width="369" height="161" alt="image" src="https://github.com/user-attachments/assets/a09ad664-6f56-4f78-b94f-46bb69300c17" />
 
 ## 3. Write a PL/SQL Procedure to Check Whether a Number is Even or Odd
 
